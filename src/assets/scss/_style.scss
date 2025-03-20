@@ -1,0 +1,828 @@
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--white-color);
+}
+
+.main {
+    overflow: hidden;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 5rem 1rem;
+
+    &__title {
+        font-size: var(--big-font-size);
+        font-family: var(--second-font);
+        font-weight: initial;
+        margin-bottom: 2rem;
+        text-align: center;
+
+        span {
+            display: block;
+            background: var(--third-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    }
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    background: var(--first-gradient);
+    color: var(--white-color);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: box-shadow .4s;
+
+    &:hover {
+        box-shadow: 0 8px 32px hsla(243, 100%, 54%, .4);
+    }
+
+    &--yellow {
+        background: var(--third-gradient);
+
+        &:hover {
+            box-shadow: 0 8px 32px hsla(25, 96%, 55%, .4);
+        }
+    }
+}
+
+.scroll-active-link {
+    color: var(--first-color) !important;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 100;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(238, 100%, 6%, .5);
+        backdrop-filter: blur(16px);
+        z-index: -1;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+    }
+
+    &.blur-header {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        display: inline-flex;
+        align-items: center;
+        column-gap: .5rem;
+        color: var(--white-color);
+        font-weight: 600;
+
+        img {
+            width: 1.5rem;
+        }
+    }
+
+    &__toggle,
+    &__close {
+        display: inline-flex;
+        font-size: 1.5rem;
+        color: var(--white-color);
+        cursor: pointer;
+    }
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: hsla(238, 100%, 6%, .5);
+        backdrop-filter: blur(16px);
+        width: 80%;
+        height: 100%;
+        padding: 8rem 3.5rem 3.5rem;
+        transform: translateX(100%);
+        transition: transform .4s;
+
+        &.show-menu {
+            transform: translateX(0);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+    &__link {
+        color: var(--white-color);
+        font-size: var(--h2-font-size);
+        font-family: var(--second-font);
+        transition: color .4s;
+
+        &:hover {
+            color: var(--first-color);
+        }
+    }
+
+    &__img,
+    &__close {
+        position: absolute;
+    }
+
+    &__close {
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    &__img {
+        width: 300px;
+        right: -3rem;
+        bottom: 5rem;
+        z-index: -1;
+    }
+}
+
+/*=============== HOME ===============*/
+.home {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // mix-blend-mode: screen;
+    }
+
+    &__container {
+        position: relative;
+        row-gap: 3rem;
+        padding-top: 3rem;
+    }
+
+    &__data {
+        position: relative;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: var(--biggest-font-size);
+        font-family: var(--second-font);
+        font-weight: initial;
+        margin-bottom: 1.5rem;
+
+        span {
+            display: block;
+
+            &:nth-child(1) {
+                background: var(--third-gradient);
+                background-clip: text;
+                color: transparent;
+            }
+
+            &:nth-child(3) {
+                background: var(--second-gradient);
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+
+    &__ovni {
+        width: 50px;
+        position: absolute;
+        top: 4rem;
+        right: -1rem;
+        transform: rotateY(180deg);
+    }
+
+    &__img {
+        width: 320px;
+        justify-self: center;
+    }
+}
+
+/*=============== TRAVEL ===============*/
+.travel {
+    position: relative;
+
+    &__container {
+        position: relative;
+        background-color: hsla(238, 50%, 20%, .4);
+        backdrop-filter: blur(16px);
+        padding: 2rem 2rem 5rem;
+    }
+
+    &__lines {
+        max-width: initial;
+        width: 550px;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+    }
+
+    &__card {
+        position: relative;
+        border: 2px solid;
+        border-image: var(--second-gradient) 1;
+        background: linear-gradient(hsla(243, 98%, 51%, .3), transparent 50%);
+        padding: 9.25rem 1rem 3rem;
+        text-align: center;
+    }
+
+    &__img {
+        width: 180px;
+        position: absolute;
+        top: -3rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: rotate(-90deg);
+        transition: transform .6s;
+    }
+
+    &__title {
+        font-size: var(--h2-font-size);
+    }
+
+    &__info {
+        display: block;
+        color: var(--first-color);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: var(--small-font-size);
+    }
+
+    &__swiper {
+        padding-top: 3rem;
+    }
+
+    .swiper-pagination {
+        --swiper-pagination-bottom: 2rem;
+        --swiper-pagination-bullet-size: 1rem;
+        --swiper-pagination-bullet-width: 1rem;
+        --swiper-pagination-bullet-height: 1rem;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-color: transparent;
+        --swiper-pagination-bullet-inactive-color: transparent;
+
+        .swiper-pagination-bullet {
+            border: 2px solid var(--border-color);
+
+            &.swiper-pagination-bullet-active {
+                border: 2px solid transparent;
+                background: linear-gradient(var(--body-color), var(--body-color)) padding-box,
+                    linear-gradient(135deg, hsl(25, 96%, 55%) 0%, hsl(34, 93%, 53%) 100%) border-box;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    background: var(--third-gradient);
+                    border-radius: 50%;
+                    inset: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .swiper-slide-active .travel__img {
+        transform: rotate(0);
+    }
+}
+
+/*=============== TRAVEL ===============*/
+.explore {
+    &__container {
+        row-gap: 3rem;
+    }
+
+    &__data {
+        position: relative;
+    }
+
+    &__planet {
+        width: 50px;
+        position: absolute;
+        top: 3rem;
+        // right: 0;
+        left: calc(100% - 60px);
+    }
+
+    &__description {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        column-gap: 3rem;
+
+        &-title {
+            font-size: var(--normal-font-size);
+        }
+
+        &-number {
+            font-size: var(--h1-font-size);
+            font-family: var(--second-font);
+            background: var(--second-gradient);
+            background-clip: text;
+            color: transparent;
+
+            span {
+                font-size: var(--small-font-size);
+            }
+        }
+    }
+
+    &__img {
+        width: 320px;
+        justify-self: center;
+    }
+}
+
+/*=============== HYSTORY ===============*/
+.history {
+    position: relative;
+
+    &__container {
+        position: relative;
+        row-gap: 2.5rem;
+        grid-template-columns: 265px;
+        justify-content: center;
+    }
+
+    &__card {
+        text-align: center;
+    }
+
+    &__img {
+        width: 150px;
+        margin: 0 auto .75rem;
+    }
+
+    &__description {
+        span {
+            color: var(--first-color);
+            font-weight: 600;
+        }
+    }
+
+    &__planet {
+        position: absolute;
+
+        &--1 {
+            width: 250px;
+            top: 10rem;
+            left: -8rem;
+        }
+
+        &--2 {
+            width: 150px;
+            // right: -5rem;
+            bottom: 6rem;
+            left: calc(100% - 5rem);
+        }
+    }
+}
+
+/*=============== CONTACT ===============*/
+.contact {
+    &__container {
+        padding-bottom: 2rem;
+    }
+
+    &__form {
+        display: grid;
+        row-gap: 1rem;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: var(--body-color);
+        border: 2px solid var(--border-color);
+        padding: 1rem;
+        color: var(--white-color);
+    }
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    overflow: hidden;
+
+    &__container {
+        position: relative;
+        row-gap: 4.5rem;
+        padding-block: 2rem;
+    }
+
+    &__planet {
+        position: absolute;
+
+        &--1 {
+            width: 200px;
+            left: -6.5rem;
+            bottom: -4.5rem;
+        }
+
+        &--2 {
+            width: 50px;
+            top: 5.5rem;
+            right: 0;
+        }
+    }
+
+    &__content {
+        row-gap: 2.5rem;
+    }
+
+    &__links {
+        display: flex;
+        column-gap: 2rem;
+        justify-content: center;
+    }
+
+    &__link {
+        color: var(--white-color);
+        font-weight: 600;
+        transition: color .4s;
+
+        &:hover {
+            color: var(--first-color);
+        }
+    }
+
+    &__social {
+        display: flex;
+        column-gap: 1rem;
+        justify-content: center;
+
+        &-link {
+            display: inline-flex;
+            background: var(--third-gradient);
+            color: var(--white-color);
+            font-size: 1.5rem;
+            padding: 0.25rem;
+            transition: box-shadow .4s;
+
+            &:hover {
+                box-shadow: 0 8px 32px hsla(25, 96%, 65%, .6);
+            }
+        }
+    }
+
+    &__copy {
+        text-align: center;
+        z-index: 10;
+        color: var(--white-color);
+        font-size: var(--small-font-size);
+    }
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: hsl(238, 60%, 20%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(238, 50%, 30%);
+
+    &:hover {
+        background: hsl(238, 40%, 40%);
+    }
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+    --gap: 3rem;
+    position: fixed;
+    right: 1rem;
+    bottom: var(--gap);
+    transform: translateY(calc(100% + var(--gap)));
+    background-color: var(--body-color-light);
+    box-shadow: 0 8px 24px hsla(238, 60%, 4%, .6);
+    display: inline-flex;
+    padding: 6px;
+    color: var(--white-color);
+    font-size: 1.25rem;
+    z-index: 10;
+    transition: bottom .4s, transform .4s;
+
+    &.show-scroll {
+        transform: translateY(0);
+
+        &:hover {
+            transform: translateY(-.5rem);
+        }
+    }
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .home__title {
+        font-size: 2.5rem;
+    }
+
+    .travel__container {
+        padding-inline: 1rem;
+    }
+
+    .explore__info {
+        flex-direction: column;
+        row-gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 540px) {
+
+    .home__container,
+    .explore__container {
+        grid-template-columns: 350px;
+        justify-content: center;
+    }
+
+    .travel__card {
+        width: 265px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .home__container,
+    .explore__container {
+        grid-template-columns: repeat(2, 350px);
+        align-items: center;
+    }
+
+    .home__data,
+    .explore__container .section__title,
+    .explore__description {
+        text-align: initial;
+    }
+
+    .explore__info {
+        justify-content: initial;
+    }
+
+    .explore__img {
+        order: -1;
+    }
+
+    .history__container {
+        grid-template-columns: repeat(2, 265px);
+    }
+
+    .contact__form {
+        width: 600px;
+        justify-self: center;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        column-gap: 1rem;
+        border: 2px solid var(--border-color);
+        padding: 1rem 1rem 1rem 1.5rem;
+    }
+
+    .contact__input {
+        border: none;
+        padding: 0;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .section {
+        padding-block: 7rem 2rem;
+    }
+
+    .section__title {
+        margin-bottom: 3rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+    }
+
+    .nav__logo img {
+        width: 3rem;
+    }
+
+    .nav__close,
+    .nav__toggle {
+        font-size: 2rem;
+    }
+
+    .nav__menu {
+        width: 40%;
+        padding: 10rem 4.5rem 0;
+    }
+
+    .nav__list {
+        row-gap: 3.5rem;
+    }
+
+    .nav__close {
+        top: 1.7rem;
+    }
+
+    .nav__img {
+        width: 400px;
+        right: -4rem;
+    }
+
+    .home__container {
+        grid-template-columns: 540px 550px;
+        column-gap: 2rem;
+    }
+
+    .home__title {
+        margin-bottom: 3rem;
+    }
+
+    .home__ovni {
+        width: 100px;
+        top: 10rem;
+        right: 1.5rem;
+    }
+
+    .home__img {
+        width: 550px;
+    }
+
+    .travel__lines {
+        width: 800px;
+    }
+
+    .travel__container {
+        padding: 3.5rem 3.5rem 7.5rem;
+    }
+
+    .travel__container .section__title {
+        text-align: initial;
+    }
+
+    .travel__swiper {
+        max-width: 980px;
+    }
+
+    .travel__card {
+        padding-top: 11rem;
+    }
+
+    .travel__img {
+        width: 200px;
+    }
+
+    .travel__info {
+        margin-bottom: 1.5rem;
+    }
+
+    .travel__description {
+        font-size: var(--normal-font-size);
+    }
+
+    .travel .swiper-pagination {
+        --swiper-pagination-bottom: 3rem;
+    }
+
+    .explore__container {
+        grid-template-columns: 550px 480px;
+        column-gap: 2rem;
+    }
+
+    .explore__img {
+        width: 550px;
+    }
+
+    .explore__data .section__title {
+        margin-bottom: 1.5rem;
+    }
+
+    .explore__description {
+        margin-bottom: 3rem;
+    }
+
+    .explore__planet {
+        width: 100px;
+        right: -4rem;
+    }
+
+    .history__container {
+        grid-template-columns: repeat(3, 265px);
+        column-gap: 5rem;
+    }
+
+    .history__img {
+        width: 200px;
+        margin-bottom: 1rem;
+    }
+
+    .history__planet--1 {
+        width: 500px;
+        left: -15rem;
+    }
+
+    .history__planet--2 {
+        width: 300px;
+        // right: -8rem;
+        left: calc(100% - 8rem);
+        bottom: 10rem;
+    }
+
+    .footer__container {
+        padding-block: 4rem 3rem;
+    }
+
+    .footer__links {
+        column-gap: 4rem;
+    }
+
+    .footer__social {
+        column-gap: 1.5rem;
+    }
+
+    .footer__planet--1 {
+        width: 400px;
+        bottom: -12rem;
+    }
+    .footer__planet--2 {
+        width: 150px;
+    }
+
+    .scrollup {
+        right: 3rem;
+    }
+}

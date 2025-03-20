@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starter</title>
+    <link rel="stylesheet" href="/src/assets/scss/main.scss">
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="/src/assets/img/logo.svg" alt="Alt"> Planet
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li>
+                        <a href="#home" class="nav__link active-scroll-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#travel" class="nav__link">Travel</a>
+                    </li>
+                    <li>
+                        <a href="#explore" class="nav__link">Exploration</a>
+                    </li>
+                    <li>
+                        <a href="#history" class="nav__link">History</a>
+                    </li>
+                </ul>
+
+                <!-- Сlose button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-large-line"></i>
+                </div>
+
+                <img src="/src/assets/img/nav-comet.svg" alt="Alt" class="nav__img">
+            </div>
+
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-4-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <img src="/src/assets/img/home-bg.svg" alt="Alt" class="home__bg">
+
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        <span>WELCOME</span>
+                        <span>TO THE</span>
+                        <span>SPACE</span>
+                    </h1>
+
+                    <a href="#" class="button">Explore Mars</a>
+
+                    <img src="/src/assets/img/home-ovni.svg" alt="Alt" class="home__ovni">
+                </div>
+
+                <img src="/src/assets/img/home-img.png" alt="Alt" class="home__img">
+            </div>
+        </section>
+
+        <!--==================== TRAVEL ====================-->
+        <section class="travel section" id="travel">
+            <img src="/src/assets/img/travel-lines.svg" alt="Alt" class="travel__lines">
+
+            <div class="travel__container container">
+                <h2 class="section__title">
+                    SPACE <span>TRAVEL LIST</span>
+                </h2>
+
+                <div class="travel__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <article class="travel__card swiper-slide">
+                            <img src="/src/assets/img/travel-planet-1.svg" alt="Alt" class="travel__img">
+                            <h3 class="tavel__title">PLANET EARTH</h3>
+                            <span class="travel__info">54.06 million km</span>
+                            <p class="travel__description">
+                                Planet Earth is made up of beautiful
+                                landscapes and extensive mountain ranges.
+                            </p>
+                        </article>
+
+                        <article class="travel__card swiper-slide">
+                            <img src="/src/assets/img/travel-planet-2.svg" alt="Alt" class="travel__img">
+                            <h3 class="tavel__title">THE SUN</h3>
+                            <span class="travel__info">148.14 million km</span>
+                            <p class="travel__description">
+                                Planet Earth is made up of beautiful
+                                landscapes and extensive mountain ranges.
+                            </p>
+                        </article>
+
+                        <article class="travel__card swiper-slide">
+                            <img src="/src/assets/img/travel-planet-3.svg" alt="Alt" class="travel__img">
+                            <h3 class="tavel__title">PLANET NAMEK</h3>
+                            <span class="travel__info">96.12 million km</span>
+                            <p class="travel__description">
+                                Planet Earth is made up of beautiful
+                                landscapes and extensive mountain ranges.
+                            </p>
+                        </article>
+
+                        <article class="travel__card swiper-slide">
+                            <img src="/src/assets/img/travel-planet-4.svg" alt="Alt" class="travel__img">
+                            <h3 class="tavel__title">PLANET VENUS</h3>
+                            <span class="travel__info">86.609 million km</span>
+                            <p class="travel__description">
+                                Planet Earth is made up of beautiful
+                                landscapes and extensive mountain ranges.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!--==================== EXPLORE ====================-->
+        <section class="explore section" id="explore">
+            <div class="explore__container container grid">
+                <div class="explore__data">
+                    <h2 class="section__title">
+                        LEARN MARS <span>EXPLORATION</span>
+                    </h2>
+
+                    <p class="explore__description">
+                        Mars, the fourth plane from the Sun, is a dusty, cold,
+                        desert world with a very distinctive atmosphere.
+                        The goal of the Mars exploration program is to provide a
+                        continuous flow of scientific information and discoveries
+                        through a series of carefully selected robotic orbits.
+                    </p>
+
+                    <img src="/src/assets/img/explore-planet.svg" alt="Alt" class="explore__planet">
+
+                    <div class="explore__info">
+                        <div>
+                            <h3 class="explore__info-title">MOON</h3>
+                            <div class="explore__info-number">2</div>
+                        </div>
+
+                        <div>
+                            <h3 class="explore__info-title">DISTANCE</h3>
+                            <div class="explore__info-number">
+                                62.069.570 <span>km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="/src/assets/img/explore-img.png" alt="Alt" class="explore__img">
+            </div>
+        </section>
+
+        <!--==================== HISTORY ====================-->
+        <section class="history section" id="history">
+            <h2 class="section__title">
+                SPACE TRAVEL <span>HISTORY</span>
+            </h2>
+
+            <img src="/src/assets/img/history-planet-1.svg" alt="Alt" class="history__planet history__planet--1">
+            <img src="/src/assets/img/history-planet-2.svg" alt="Alt" class="history__planet history__planet--2">
+
+            <div class="history__container container grid">
+                <article class="history__card">
+                    <img src="/src/assets/img/history-img-1.svg" alt="Alt" class="history__img">
+                    <p class="history__description">
+                        <span>The International Space Station,</span>
+                        (ISS) is a modular space station in low Earth orbit.
+                    </p>
+                </article>
+
+                <article class="history__card">
+                    <img src="/src/assets/img/history-img-2.svg" alt="Alt" class="history__img">
+                    <p class="history__description">
+                        <span>Melio Janz,</span>
+                        the first person in space and in orbit.
+                    </p>
+                </article>
+
+                <article class="history__card">
+                    <img src="/src/assets/img/history-img-3.svg" alt="Alt" class="history__img">
+                    <p class="history__description">
+                        <span>Teamwork and Collaboration,</span>
+                        in long duration space missions.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!--==================== CONTACT ====================-->
+        <section class="contact section">
+            <h2 class="section__title">
+                GET OUR <span>LATEST NEWS</span>
+            </h2>
+
+            <div class="contact__container container grid">
+                <form action="" class="contact__form">
+                    <input type="email" placeholder="Email Adress" name="email" autocomplete="email" class="contact__input">
+                    <button type="submit" class="button button--yellow">Email Address</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <img src="/src/assets/img/footer-planet-1.svg" alt="Alt" class="footer__planet footer__planet--1">
+            <img src="/src/assets/img/footer-planet-2.svg" alt="Alt" class="footer__planet footer__planet--2">
+
+            <div class="footer__content grid">
+                <ul class="footer__links">
+                    <li>
+                        <a href="#" class="footer__link">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">TRAVEL</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">EXPLORE</a>
+                    </li>
+                </ul>
+
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer__social-link" rel="noopener noreferrer nofollow">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="footer__social-link" rel="noopener noreferrer nofollow">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="footer__social-link" rel="noopener noreferrer nofollow">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <span class="footer__copy">
+                &#169; All Rights Reserved By Bedimcode
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#home" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <script type="module" src="/src/assets/js/main.js"></script>
+</body>
+
+</html>
