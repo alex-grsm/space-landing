@@ -47,9 +47,8 @@ ej.reveal(`.explore__data`, { origin: 'right' });
 ej.reveal(`.explore__planet`, { origin: 'right', delay: 800, rotate: { z: 10 } });
 
 ej.reveal(`.history__card`, { 
-    interval: 100,
+    interval: 200,
     origin: 'left',
-    distance: '100px',
     rotate: { z: 5 }
 });
 
