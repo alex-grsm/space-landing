@@ -40,9 +40,9 @@ const ej = new ScrollEjuk({
     delay: 200,
 });
 ej.reveal(`.home__data, .travel__swiper`);
-ej.reveal(`.home__img`, { origin: 'bottom' });
-ej.reveal(`.home__ovni`, { delay: 800 });
-ej.reveal(`.explore__img`, { origin: 'left' });
+ej.reveal(`.home__img`, { origin: 'top', rotate: { z: 10 } });
+ej.reveal(`.home__ovni`, { delay: 800, rotate: { z: -10 } });
+ej.reveal(`.explore__img`, { origin: 'left', rotate: { z: -10 } });
 ej.reveal(`.explore__data`, { origin: 'right' });
 ej.reveal(`.explore__planet`, { origin: 'right', delay: 800, rotate: { z: 10 } });
 
